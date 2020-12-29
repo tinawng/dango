@@ -1,21 +1,32 @@
 html {
+  font-family:
+    'Source Sans Pro',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+  font-size: 16px;
+  word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  
   box-sizing: border-box;
 }
 
 strong {
+  @apply font-bold;
 }
 
 h1 {
+  @apply text-2xl font-bold;
 }
 h2 {
 }
 h3 {
-  @apply text-2xl;
 }
 h4 {
 }
@@ -29,9 +40,26 @@ p {
 }
 
 button {
-  @apply h-8 w-32 rounded-xl bg-sunset-300;
+  @apply h-8 w-32 rounded-xl;
+  @apply bg-sunset-300 shadow-md;
   @apply text-sm text-white uppercase tracking-widest;
-  @apply shadow-md;
+}
+button:focus {
+  @apply outline-none
+}
+
+input[type='text'], input[type='password'] {
+  @apply h-8 w-3/4;
+  @apply border rounded-xl;
+  @apply bg-gray-50 shadow-inner;
+  @apply placeholder-gray-400 text-center text-sm;
+}
+input[type='submit'] {
+  @apply h-8 w-3/4 rounded-xl;
+  @apply bg-gray-50 shadow-md;
+}
+input:focus {
+  @apply outline-none shadow-inner;
 }
 
 .flex-center-x {
@@ -51,4 +79,35 @@ button {
 }
 .flex-vertical-center {
   @apply flex-vertical-center-x flex-vertical-center-y;
+}
+
+/* 💫 Vue Animation */
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s ease;
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.shake {
+  animation: shake 0.61s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-2px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(3px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-5px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(5px, 0, 0);
+  }
 }

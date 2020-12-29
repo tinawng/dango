@@ -20,7 +20,10 @@ module.exports = {
       borderRadius: {
         'xl': '1rem',
         '15': '15%',
-      }
+      },
+      minWidth: {
+        'screen': '100vw'
+       }
     }
   },
   variants: {
