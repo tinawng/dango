@@ -2,9 +2,25 @@
   <div class="container">
     <nav-bar />
     <div class="w-2/3 flex justify-between">
-      <big-button name="Movies" baseline="Movies & Series 🍿" image="movie.png"/>
-      <big-button name="Love Movies" baseline="Shortcut to the best parts 😉" image="hearts.png"/>
-      <big-button name="Download" baseline="Backup some videos 💾" image="package.png"/>
+      <NuxtLink to="/list/" ondragstart="return false" ondrop="return false">
+        <big-button
+          name="Movies"
+          baseline="Movies & Series 🍿"
+          image="movie.png"
+        />
+      </NuxtLink>
+      <NuxtLink to="/list/p0" ondragstart="return false" ondrop="return false">
+        <big-button
+          name="Love Movies"
+          baseline="Shortcuts to the best part 😉"
+          image="hearts.png"
+        />
+      </NuxtLink>
+      <big-button
+        name="Upload"
+        baseline="Backup some videos 💾"
+        image="package.png"
+      />
     </div>
   </div>
 </template>
@@ -15,16 +31,15 @@ import NavBar from "~/components/NavBar.vue";
 export default {};
 </script>
 
-<style>
+<style lang="postcss">
 .container {
-  min-width: 100vw;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  @apply min-w-screen min-h-screen flex justify-center items-center text-center;
 
-  background: linear-gradient(90deg, rgba(239,239,239,1) 15%, rgba(225,242,192,1) 35%);
+  background: linear-gradient(
+    90deg,
+    rgba(239, 239, 239, 1) 20%,
+    rgba(225, 242, 192, 1) 40%
+  );
 
   /* background: linear-gradient(
     to right,
@@ -33,17 +48,5 @@ export default {};
     #e1f2c0 25%,
     #e1f2c0 100%
   ); */
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
 }
 </style>
