@@ -59,5 +59,11 @@ export default {
         removeEmptyElements: true
       }
     }
+  },
+
+  // Server config
+  server: {
+    port: 8091, // default: 3000
+    host: '0.0.0.0' // default: localhost
   }
 }
