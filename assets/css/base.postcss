@@ -62,23 +62,25 @@ input:focus {
   @apply outline-none shadow-inner;
 }
 
-.flex-center-x {
-  @apply flex justify-center;
-}
-.flex-vertical-center-x {
-  @apply flex flex-col items-center;
-}
-.flex-center-y {
-  @apply flex items-center;
-}
-.flex-vertical-center-y {
-  @apply flex flex-col justify-center;
-}
-.flex-center {
-  @apply flex-center-x flex-center-y;
-}
-.flex-vertical-center {
-  @apply flex-vertical-center-x flex-vertical-center-y;
+@variants responsive {
+  .flex-center-x {
+    @apply flex justify-center;
+  }
+  .flex-vertical-center-x {
+    @apply flex flex-col items-center;
+  }
+  .flex-center-y {
+    @apply flex items-center;
+  }
+  .flex-vertical-center-y {
+    @apply flex flex-col justify-center;
+  }
+  .flex-center {
+    @apply flex-center-x flex-center-y;
+  }
+  .flex-vertical-center {
+    @apply flex-vertical-center-x flex-vertical-center-y;
+  }
 }
 
 /* 💫 Vue Animation */

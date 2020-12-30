@@ -45,13 +45,10 @@ Front side is built with ***Nuxt SSR*** and ***Tailwind CSS*** framework for sty
 $ npm install
 $ yarn add --dev tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
 
-# serve with hot reload at localhost:3000
+# serve with hot reload at localhost:8091
 $ npm run dev
 
-# build for production and launch server
+# build for production and launch server at 0.0.0.0:8091
 $ npm run build
 $ npm run start
-
-# generate static project
-$ npm run generate
 ```

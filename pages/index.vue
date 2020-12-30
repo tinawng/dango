@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
+  <div class="main-container">
     <nav-bar />
-    <div class="w-2/3 flex justify-between">
+    <div class="menu-container portrait:flex-vertical-center-x">
       <NuxtLink to="/list/" ondragstart="return false" ondrop="return false">
         <big-button
           name="Movies"
@@ -31,8 +31,8 @@ import NavBar from "~/components/NavBar.vue";
 export default {};
 </script>
 
-<style lang="postcss">
-.container {
+<style lang="postcss" scoped>
+.main-container {
   @apply min-w-screen min-h-screen flex justify-center items-center text-center;
 
   background: linear-gradient(
@@ -41,6 +41,14 @@ export default {};
     rgba(225, 242, 192, 1) 40%
   );
 
+  @media (orientation: portrait) {
+    background: linear-gradient(
+      0deg,
+      rgba(239, 239, 239, 1) 20%,
+      rgba(225, 242, 192, 1) 40%
+    );
+  }
+
   /* background: linear-gradient(
     to right,
     #fafafa 0%,
@@ -48,5 +56,18 @@ export default {};
     #e1f2c0 25%,
     #e1f2c0 100%
   ); */
+}
+
+.menu-container {
+  @apply w-2/3;
+  @apply mt-24;
+  @apply flex justify-between;
+  @apply text-steel-800;
+
+  @media (orientation: portrait) {
+    @apply h-screen;
+    @apply mt-20;
+    @apply justify-evenly;
+  }
 }
 </style>

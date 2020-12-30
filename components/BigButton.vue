@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-vertical-center text-steel-800">
+  <div class="flex-vertical-center">
     <div
       class="h-28 w-28 bg-white transition-shadow shadow-md hover:shadow-xl flex-center rounded-15"
       v-ripple="{ center: false, }"

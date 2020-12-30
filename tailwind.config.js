@@ -23,11 +23,12 @@ module.exports = {
       },
       minWidth: {
         'screen': '100vw'
-       }
+      },
+      screens: {
+        'portrait': {'raw': '(orientation: portrait)'},
+      }
     }
   },
-  variants: {
-    extend: {},
-  },
+  variants: {},
   plugins: [],
 }

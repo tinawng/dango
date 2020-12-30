@@ -9,7 +9,7 @@
       >
         <NuxtLink :to="'/list/' + current_route + dir + '/'">
           <div
-            class="h-28 border transition-shadow shadow-md hover:shadow-lg flex-center"
+            class="h-28 border rounded-md transition-shadow shadow-md hover:shadow-lg flex-center"
           >
             <b>{{ dir }}</b>
           </div>
@@ -20,10 +20,10 @@
     <div
       v-for="movie in movies"
       :key="movie"
-      class="w-3/4 my-2 py-4 border transition-shadow shadow-md hover:shadow-lg text-center"
+      class="w-3/4 my-2 py-4 border rounded-md transition-shadow shadow-md hover:shadow-lg block whitespace-nowrap overflow-ellipsis overflow-hidden text-center portrait:text-xs"
     >
       <NuxtLink :to="'/stream/' + current_route + movie">
-        {{ movie }}
+        {{ purifyTitle(movie) }}
       </NuxtLink>
     </div>
   </div>
@@ -46,6 +46,22 @@ export default {
       return this.$nuxt.$route.path.replace("/list/", "");
     },
   },
+
+  methods: {
+    purifyTitle(title) {
+      // Resolutions
+      var res = title.replace(/1080p|720p|480p/ig, '');
+      // Codecs
+      res = res.replace(/h264|x264|x265/ig, '');
+      // // Formats
+      res = res.replace(/avi|mkv|mp4|wmv/ig, '');
+      // // Tags
+      res = res.replace(/pophd|multi|bluray|brrip|hdlight|xvid|60fps|ac3|notag|xantar|hush|xxx|acool|akatsuki|unrated|10bits|eaulive|eauve|hevc|sn2p|venue|rdh|dts|hd|sd/ig, '');
+      // Other specials characters
+      res = res.replace(/[^a-zA-Z0-9\s]/g, " ");
+      return res;
+    }
+  }
 };
 </script>
 

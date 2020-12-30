@@ -1,11 +1,11 @@
 <template>
-  <div class="absolute w-full h-24 top-0 flex justify-between">
+  <div class="absolute w-full h-24 top-0 flex justify-between portrait:justify-around text-steel-800">
     <div class="w-1/4 flex-center">
       <img class="h-16 w-16" src="~/assets/images/dango.png" />
       <span class="text-2xl font-bold">Dango</span>
     </div>
 
-    <div class="w-1/4 flex-center" v-click-outside="shakeButton">
+    <div class="w-1/4 flex-center text-right" v-click-outside="shakeButton">
       <button
         v-if="!is_auth"
         :class="{ shake }"

@@ -41,7 +41,7 @@ export default {
       try {
         // 🚀 Submit login infos
         const { token, user } = await this.$http.$post("/auth/login", {
-          name: this.login,
+          name: this.login.toLowerCase(),
           password: this.password
         });
         
