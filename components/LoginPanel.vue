@@ -7,12 +7,7 @@
       v-on:submit.prevent="onSubmit"
     >
       <p>
-        <input
-          type="text"
-          v-model="login"
-          name="login"
-          placeholder="Login"
-        />
+        <input type="text" v-model="login" name="login" placeholder="Login" />
       </p>
       <p>
         <input
@@ -25,6 +20,9 @@
       <p>
         <input v-ripple="{ center: false }" type="submit" value="🔓" />
       </p>
+      <p v-if="err">
+        ❌ Wrong user
+      </p>
     </form>
   </div>
 </template>
@@ -34,17 +32,24 @@ export default {
   data: () => ({
     login: "",
     password: "",
+    err: false
   }),
 
   methods: {
     async onSubmit() {
       try {
+        this.$http.onError((error) => {
+          if (error.statusCode == 401) {
+            this.err = true;
+          }
+        });
+
         // 🚀 Submit login infos
         const { token, user } = await this.$http.$post("/auth/login", {
           name: this.login.toLowerCase(),
-          password: this.password
+          password: this.password,
         });
-        
+
         // 🗃️ Store token & user datas
         this.$store.commit("auth/setToken", token);
         this.$store.commit("auth/setUser", user);
