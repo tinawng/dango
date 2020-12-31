@@ -6,6 +6,7 @@
         v-for="(dir, index) in directories"
         :key="dir"
         :class="['w-1/2 my-2', index % 2 ? 'pl-2' : 'pr-2']"
+        v-ripple="{ center: false, }"
       >
         <NuxtLink :to="'/list/' + current_route + dir + '/'">
           <div
@@ -21,6 +22,7 @@
       v-for="movie in movies"
       :key="movie"
       class="w-3/4 my-2 py-4 border rounded-md transition-shadow shadow-md hover:shadow-lg block whitespace-nowrap overflow-ellipsis overflow-hidden text-center portrait:text-xs"
+      v-ripple="{ center: false, }"
     >
       <NuxtLink :to="'/stream/' + current_route + movie">
         {{ purifyTitle(movie) }}
