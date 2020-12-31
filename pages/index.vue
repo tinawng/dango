@@ -33,29 +33,9 @@ export default {};
 
 <style lang="postcss" scoped>
 .main-container {
-  @apply min-w-screen min-h-screen flex justify-center items-center text-center;
-
-  background: linear-gradient(
-    90deg,
-    rgba(239, 239, 239, 1) 20%,
-    rgba(225, 242, 192, 1) 40%
-  );
-
-  @media (orientation: portrait) {
-    background: linear-gradient(
-      0deg,
-      rgba(239, 239, 239, 1) 20%,
-      rgba(225, 242, 192, 1) 40%
-    );
-  }
-
-  /* background: linear-gradient(
-    to right,
-    #fafafa 0%,
-    #fafafa 25%,
-    #e1f2c0 25%,
-    #e1f2c0 100%
-  ); */
+  @apply min-w-screen min-h-screen ;
+  @apply bg-olive-200;
+  @apply flex justify-center items-center text-center;
 }
 
 .menu-container {

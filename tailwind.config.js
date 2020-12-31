@@ -8,6 +8,7 @@ module.exports = {
           '800': '#35495e'
         },
         olive: {
+          '200': '#E1F2C0',
           '500': '#86b300',
         },
         sunset: {
