@@ -6,7 +6,7 @@
         v-for="(dir, index) in directories"
         :key="dir"
         :class="['w-1/2 my-2', index % 2 ? 'pl-2' : 'pr-2']"
-        v-ripple="{ center: false, }"
+        v-ripple="{ center: false }"
       >
         <NuxtLink :to="'/list/' + current_route + dir + '/'">
           <div
@@ -18,14 +18,14 @@
       </div>
     </div>
     <h1 class="w-3/4 my-4">🎞️ Movies</h1>
-    <div
-      v-for="movie in movies"
-      :key="movie"
-      class="w-3/4 my-2 py-4 border rounded-md transition-shadow shadow-md hover:shadow-lg block whitespace-nowrap overflow-ellipsis overflow-hidden text-center portrait:text-xs"
-      v-ripple="{ center: false, }"
-    >
+    <div v-for="movie in movies" :key="movie" class="w-3/4">
       <NuxtLink :to="'/stream/' + current_route + movie">
-        {{ purifyTitle(movie) }}
+        <div
+          class="my-2 py-4 border rounded-md transition-shadow shadow-md hover:shadow-lg block whitespace-nowrap overflow-ellipsis overflow-hidden text-center portrait:text-xs"
+          v-ripple="{ center: false }"
+        >
+          {{ purifyTitle(movie) }}
+        </div>
       </NuxtLink>
     </div>
   </div>
@@ -52,18 +52,21 @@ export default {
   methods: {
     purifyTitle(title) {
       // Resolutions
-      var res = title.replace(/1080p|720p|480p/ig, '');
+      var res = title.replace(/1080p|720p|480p/gi, "");
       // Codecs
-      res = res.replace(/h264|x264|x265/ig, '');
+      res = res.replace(/h264|x264|x265/gi, "");
       // // Formats
-      res = res.replace(/avi|mkv|mp4|wmv/ig, '');
+      res = res.replace(/avi|mkv|mp4|wmv/gi, "");
       // // Tags
-      res = res.replace(/pophd|multi|bluray|brrip|hdlight|xvid|60fps|ac3|notag|xantar|hush|xxx|acool|akatsuki|unrated|10bits|eaulive|eauve|hevc|sn2p|venue|rdh|dts|hd|sd/ig, '');
+      res = res.replace(
+        /pophd|multi|bluray|brrip|hdlight|xvid|60fps|ac3|notag|xantar|hush|xxx|acool|akatsuki|unrated|10bits|eaulive|eauve|hevc|sn2p|venue|rdh|dts|hd|sd/gi,
+        ""
+      );
       // Other specials characters
       res = res.replace(/[^a-zA-Z0-9\s]/g, " ");
       return res;
-    }
-  }
+    },
+  },
 };
 </script>
 
