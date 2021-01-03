@@ -1,7 +1,7 @@
 <template>
   <div class="m-4 pt-4 w-64 rounded-lg shadow-xl flex-center bg-white">
     <form
-      action="http://potato.tina.cafe/auth/login"
+      :action="backend_url + '/auth/login'"
       method="POST"
       class="w-full"
       v-on:submit.prevent="onSubmit"
@@ -20,19 +20,23 @@
       <p>
         <input v-ripple="{ center: false }" type="submit" value="🔓" />
       </p>
-      <p v-if="err">
-        ❌ Wrong user
-      </p>
+      <p v-if="err">❌ Wrong user</p>
     </form>
   </div>
 </template>
 
 <script>
 export default {
+  computed: {
+    backend_url() {
+      return process.env.BACKEND_URL;
+    },
+  },
+
   data: () => ({
     login: "",
     password: "",
-    err: false
+    err: false,
   }),
 
   methods: {
