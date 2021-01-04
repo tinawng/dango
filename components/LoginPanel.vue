@@ -42,6 +42,7 @@ export default {
   methods: {
     async onSubmit() {
       try {
+        // 🥅 Handle error
         this.$http.onError((error) => {
           if (error.statusCode == 401) {
             this.err = true;
