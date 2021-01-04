@@ -11,7 +11,7 @@
 
 🍡 ***Dango*** is a small vacation project in order to create a plateform for streaming videos from my home NAS.
 
-Front side is built with ***Nuxt SSR*** and ***Tailwind CSS*** framework for styles 😎 Back side relies on my main ***REST API*** *[🥔 Potato](https://github.com/tinawng/potato)* (built with ***Fastify***)
+Front side is built with ***Nuxt SSR*** and ***Tailwind CSS*** framework for styles 😎 Back side relies on my main ***REST API*** *[🎋 Tanabata](https://github.com/tinawng/tanabata)* (built with ***Fastify.js***)
 
 
 # Website
