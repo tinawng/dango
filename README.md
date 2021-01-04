@@ -1,22 +1,23 @@
 <p align="center">
-    <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/softbank/145/dango_1f361.png"/>
-    <br/>
-    <br/>
-    <img src="https://img.shields.io/badge/nuxt--00C58E?style=for-the-badge&logo=nuxt.js"/>
-    <img src="https://img.shields.io/badge/vue--4FC08D?style=for-the-badge&logo=vue.js"/>
-    <img src="https://img.shields.io/badge/tailwind--38B2AC?style=for-the-badge&logo=tailwind%20css"/>
+  <a href="http://dango.tina.cafe"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/softbank/145/dango_1f361.png" alt="Dango Logo"></a>
+  <br/>
+  <br/>
+  <img src="https://img.shields.io/badge/nuxt--00C58E?style=for-the-badge&logo=nuxt.js"/>
+  <img src="https://img.shields.io/badge/vue--4FC08D?style=for-the-badge&logo=vue.js"/>
+  <img src="https://img.shields.io/badge/tailwind--38B2AC?style=for-the-badge&logo=tailwind%20css"/>
+  <br/>
+  <br/>
 </p>
 
-# Infos
+---
 
 🍡 ***Dango*** is a small vacation project in order to create a plateform for streaming videos from my home NAS.
 
 Front side is built with ***Nuxt SSR*** and ***Tailwind CSS*** framework for styles 😎 Back side relies on my main ***REST API*** *[🎋 Tanabata](https://github.com/tinawng/tanabata)* (built with ***Fastify.js***)
 
-
 # Website
 
-🔗 ***[dango.tina.cafe](http://dango.tina.cafe/)***
+  🔗 ***[dango.tina.cafe](http://dango.tina.cafe/)***
 
 # Features
 
