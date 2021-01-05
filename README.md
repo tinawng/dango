@@ -31,7 +31,7 @@ Front side is built with ***Nuxt SSR*** and ***Tailwind CSS*** framework for sty
 
 # Next
 - Form to upload new videos
-- Custom HTML5 player
+- ~~Persistent login~~
 
 # Links
 
