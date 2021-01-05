@@ -4,7 +4,7 @@
       class="h-28 w-28 bg-white transition-shadow shadow-md hover:shadow-xl flex-center rounded-15"
       v-ripple="{ center: false, }"
     >
-      <img class="h-16 w-16" :src="require(`~/assets/images/${image}`)" />
+      <img class="h-16 w-16" :src="require(`~/assets/images/${image}`)" :alt="image" />
     </div>
     <span class="mt-4 title text-3xl font-semibold">{{ name }}</span>
     <span class="text-lg font-light">{{ baseline }}</span>
