@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  // middleware: "authenticated",
+  middleware: "authenticated",
 
   async asyncData({ params }) {
     return { file: params.pathMatch };
