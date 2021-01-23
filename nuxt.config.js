@@ -71,8 +71,8 @@ export default {
     port: 8091,
     host: '0.0.0.0',
     https: {
-      key: fs.readFileSync('/etc/letsencrypt/live/tina.cafe/privkey.pem'),
-      cert: fs.readFileSync('/etc/letsencrypt/live/tina.cafe/cert.pem')
+      key: fs.readFileSync(process.env.CERT_PATH + 'privkey.pem'),
+      cert: fs.readFileSync(process.env.CERT_PATH + 'cert.pem')
     }
   }
 }
