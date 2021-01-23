@@ -1,3 +1,4 @@
+import fs from 'fs';
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -68,6 +69,10 @@ export default {
   // Server config
   server: {
     port: 8091,
-    host: '0.0.0.0'
+    host: '0.0.0.0',
+    https: {
+      key: fs.readFileSync('/etc/letsencrypt/live/tina.cafe/privkey.pem'),
+      cert: fs.readFileSync('/etc/letsencrypt/live/tina.cafe/cert.pem')
+    }
   }
 }
